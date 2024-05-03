@@ -1,0 +1,5 @@
+### GET /contacts
+GET http://localhost:3000/contacts
+### GET /contacts/:id
+GET http://localhost:3000/contacts/6634f8dc89a277c7a699990c
+Content-Type: application/json
