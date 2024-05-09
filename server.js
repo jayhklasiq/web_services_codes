@@ -1,22 +1,34 @@
 const express = require('express');
+const expressLayouts = require("express-ejs-layouts");
 const mongoose = require('mongoose')
 const connectDB = require('./models/config')
 const contactsRouter = require('./routes/contacts');
+const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = 3000;
+
+// Set the view engine to EJS & set it to use EJS layouts
+app.set('view engine', 'ejs');
+app.use(expressLayouts);
+app.set("layout", "./layout/layout")
+
+// Parse JSON bodies
+app.use(bodyParser.json());
+
+// Parse URL-encoded bodies
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //Connect to MongoDB
 connectDB();
 
 
-// Define a route
+// Define Routes
+//homepage route
 app.get('/', (req, res) => {
   const name = 'Timileyin Olaoye';
   res.send(`${name}`);
 });
-
-
 
 // contacts route at /contacts path
 app.use('/contacts', contactsRouter);

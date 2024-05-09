@@ -1,14 +1,13 @@
 //this file contains all configuratiion and connection settings to MongoDB as well as its Schemas
 
 const mongoose = require('mongoose');
-const Contact = require('./contactModels');
 require('dotenv').config(); //very important if you need "process.env.DATABASE_URI" to run
 
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.DATABASE_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      // useNewUrlParser: true,
+      // useUnifiedTopology: true,
       dbName: 'ContactsDB',
     });
     console.log("Connected to MongoDB Atlas");
