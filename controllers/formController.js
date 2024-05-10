@@ -15,7 +15,7 @@ async function createContacts(req, res, next) {
 // Routes to update form view
 async function updateContacts(req, res, next) {
   await mongoose.connect(process.env.DATABASE_URI);
-  const contact = await Contact.findById(req.params.id);
+  const contact = await Contact.getContactById(req.params.id);
   res.render("forms/updateForms",
     {
       contact: contact,
