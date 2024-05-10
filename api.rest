@@ -1,5 +1,35 @@
-### GET /contacts
-GET http://localhost:3000/contacts
-### GET /contacts/:id
-GET http://localhost:3000/contacts/6634f8dc89a277c7a699990c
-Content-Type: application/json
+# POST /create - Create a new contact
+# POST http://localhost:3000/contacts/create
+# Content-Type: application/json
+
+# {
+#     "firstName": "John",
+#     "lastName": "Doe",
+#     "email": "john@example.com",
+#     "favoriteColor": "blue",
+#     "birthday": "1990-01-01"
+# }
+
+# # GET / - Get all contacts
+# GET http://localhost:3000/contacts
+
+# # GET /:id - Get a specific contact by ID
+# GET http://localhost:3000/contacts/6634f8dc89a277c7a699990c
+
+# # GET /update/:id - Fetch contact details for updating
+# GET http://localhost:3000/contacts/update/6634f8dc89a277c7a699990c
+
+# # PUT /update/:id - Update a contact
+# PUT http://localhost:3000/contacts/update/606fb83e285f2d0015f6a61d
+# Content-Type: application/json
+
+# {
+#     "firstName": "Updated John",
+#     "lastName": "Updated Doe",
+#     "email": "updated_john@example.com",
+#     "favoriteColor": "red",
+#     "birthday": "1990-01-01"
+# }
+
+# DELETE /delete/:id - Delete a contact
+DELETE http://localhost:3000/contacts/delete/663e35ecdd8bac614b81f01a

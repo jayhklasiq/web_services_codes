@@ -6,8 +6,6 @@ require('dotenv').config(); //very important if you need "process.env.DATABASE_U
 const connectDB = async () => {
   try {
     await mongoose.connect(process.env.DATABASE_URI, {
-      // useNewUrlParser: true,
-      // useUnifiedTopology: true,
       dbName: 'ContactsDB',
     });
     console.log("Connected to MongoDB Atlas");

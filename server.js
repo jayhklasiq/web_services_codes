@@ -14,6 +14,7 @@ app.use(expressLayouts);
 app.set("layout", "./layout/layout")
 
 // Parse JSON bodies
+app.use(express.json());
 app.use(bodyParser.json());
 
 // Parse URL-encoded bodies
