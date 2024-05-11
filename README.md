@@ -6,3 +6,4 @@ Week 3: I have created a route file called *contacts.js* as well as *formControl
 I've also completed the following requirements: 
 - Create a POST route to create a new contact. All fields are required. Return the new contact id in the response body.
 - Create a DELETE route to delete a contact. Return an http status code representing the successful completion of the request.
+- Create a PUT route to update a contact. This route should allow for a url similar to this: api-url-path/contacts/id-to-modify. (The id won't be modified, it will just be the means of finding a specific document in the database.) Return an http status code representing the successful completion of the request.
