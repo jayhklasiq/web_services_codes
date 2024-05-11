@@ -18,17 +18,24 @@ async function createContact(contactSchema) {
 
 async function getContactById(id) {
   const { database, collection } = await connectToMongoDB();
-  const result = await collection.findOne({ _id: new ObjectId(id) }); // Pass the id to ObjectId
+  const result = await collection.findOne({ _id: new ObjectId(id) }); 
   return result;
 }
 
 async function getAllContacts() {
   const { database, collection } = await connectToMongoDB();
-  const cursor = await collection.find(); // Get the cursor
+  const cursor = collection.find(); // Get the cursor
   const result = await cursor.toArray(); // Convert cursor to array
   return result;
 }
-module.exports = { createContact, getContactById, getAllContacts };
+
+async function deleteOneContact(id) {
+  const { database, collection } = await connectToMongoDB();
+  return await collection.deleteOne({ _id: new ObjectId(id) });
+}
+
+
+module.exports = { createContact, getContactById, getAllContacts, deleteOneContact};
 
 
 

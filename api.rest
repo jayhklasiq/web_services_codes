@@ -1,4 +1,4 @@
-# POST /create - Create a new contact
+# # # POST /create - Create a new contact
 # POST http://localhost:3000/contacts/create
 # Content-Type: application/json
 
@@ -32,4 +32,4 @@
 # }
 
 # DELETE /delete/:id - Delete a contact
-# DELETE http://localhost:3000/contacts/delete/663e35ecdd8bac614b81f01a
+DELETE http://localhost:3000/contacts/delete/663eba47ffc1a71ae94e9f78
