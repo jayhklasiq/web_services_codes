@@ -2,6 +2,7 @@ const express = require('express');
 const expressLayouts = require("express-ejs-layouts");
 const connectDB = require('./models/config')
 const contactsRouter = require('./routes/contacts');
+const homeRoute = require('./routes/index')
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
@@ -26,11 +27,7 @@ connectDB();
 
 // Define Routes
 //homepage route
-app.get('/', (req, res) => {
-  const name = 'Timileyin Olaoye';
-  res.send(`${name}`);
-});
-
+app.use('/', homeRoute);
 // contacts route at /contacts path
 app.use('/contacts', contactsRouter);
 

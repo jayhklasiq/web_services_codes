@@ -1,6 +1,11 @@
 <h1><%= title %></h1>
 
-<form id="update-contact-form" action="/contacts/update/:id" method="PUT">
+<p id="update"></p>
+<form id="update-contact-form" action="/contacts/update/<%= contact._id %>"
+  method="PUT">
+  <!-- Hidden input field for contact ID -->
+  <input type="hidden" name="id" value="<%= contact._id %>">
+
   <label for="firstName">First Name:</label>
   <input type="text" id="firstName" name="firstName" required
     value="<%= contact.firstName %>">
@@ -25,3 +30,45 @@
 </form>
 
 <script src="/scripts/form-validation.js"></script>
+
+<script>
+  const form = document.getElementById('update-contact-form');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const contactId = "<%= contact._id %>";
+    const firstName = document.getElementById('firstName').value;
+    const lastName = document.getElementById('lastName').value;
+    const email = document.getElementById('email').value;
+    const favoriteColor = document.getElementById('favoriteColor').value;
+    const birthday = document.getElementById('birthday').value;
+
+    try {
+      const response = await fetch(`/contacts/update/${contactId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          favoriteColor,
+          birthday
+        })
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to update contact');
+      }
+
+      // Handle success
+      console.log('Contact updated successfully');
+      const update = document.getElementById('update');
+      update.innerText = "Update Successful"; // Display the message
+    } catch (error) {
+      // Handle error
+      console.error('Error updating contact:', error);
+    }
+  });
+</script>

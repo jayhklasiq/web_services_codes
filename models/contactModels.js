@@ -18,7 +18,7 @@ async function createContact(contactSchema) {
 
 async function getContactById(id) {
   const { database, collection } = await connectToMongoDB();
-  const result = await collection.findOne({ _id: new ObjectId(id) }); 
+  const result = await collection.findOne({ _id: new ObjectId(id) });
   return result;
 }
 
@@ -34,36 +34,9 @@ async function deleteOneContact(id) {
   return await collection.deleteOne({ _id: new ObjectId(id) });
 }
 
+async function updateOneContact(id, contactSchema) {
+  const { database, collection } = await connectToMongoDB();
+  return await collection.replaceOne({ _id: new ObjectId(id) }, contactSchema);
+}
 
-module.exports = { createContact, getContactById, getAllContacts, deleteOneContact};
-
-
-
-
-
-
-// const mongoose = require('mongoose');
-// require('dotenv').config(); //very important if you need "process.env.DATABASE_URI" to run
-
-
-// const contactSchema = new mongoose.Schema(
-//   {
-//     firstName: String,
-//     lastName: String,
-//     email: String,
-//     favoriteColor: String,
-//     birthday: Date
-//   }
-// );
-
-
-// // Create a Mongoose model
-// const Contact = mongoose.model('Contact', contactSchema);
-
-// module.exports = Contact;
-
-
-//The above function uses Mongoose while the one below uses MongoDB directly
-
-//Create a connection to MongoDB
-
+module.exports = { createContact, getContactById, getAllContacts, deleteOneContact, updateOneContact};
