@@ -1,35 +1,35 @@
-# # # POST /create - Create a new contact
-# POST http://localhost:3000/contacts/create
-# Content-Type: application/json
+# # POST /create - Create a new contact
+POST http://localhost:3000/contacts/create
+Content-Type: application/json
 
-# {
-#     "firstName": "John",
-#     "lastName": "Doe",
-#     "email": "john@example.com",
-#     "favoriteColor": "blue",
-#     "birthday": "1990-01-01"
-# }
+{
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john@example.com",
+    "favoriteColor": "blue",
+    "birthday": "1990-01-01"
+}
 
-# # GET / - Get all contacts
-# GET http://localhost:3000/contacts
+# GET / - Get all contacts
+GET http://localhost:3000/contacts
 
-# # GET /:id - Get a specific contact by ID
-# GET http://localhost:3000/contacts/663f66333a5bdb9681d15f5b
+# GET /:id - Get a specific contact by ID
+GET http://localhost:3000/contacts/663f66333a5bdb9681d15f5b
 
-# # GET /update/:id - Fetch contact details for updating
-# GET http://localhost:3000/contacts/update/663ebf527a6297d74614afbc
+# GET /update/:id - Fetch contact details for updating
+GET http://localhost:3000/contacts/update/663ebf527a6297d74614afbc
 
-# # PUT /update/:id - Update a contact
-# PUT http://localhost:3000/contacts/update/663f66333a5bdb9681d15f5b
-# Content-Type: application/json
+# PUT /update/:id - Update a contact
+PUT http://localhost:3000/contacts/update/663f66333a5bdb9681d15f5b
+Content-Type: application/json
 
-# {
-#     "firstName": "Updated John",
-#     "lastName": "Updated Doe",
-#     "email": "updated_john@example.com",
-#     "favoriteColor": "red",
-#     "birthday": "1990-01-01"
-# }
+{
+    "firstName": "Updated John",
+    "lastName": "Updated Doe",
+    "email": "updated_john@example.com",
+    "favoriteColor": "red",
+    "birthday": "1990-01-01"
+}
 
 # DELETE /delete/:id - Delete a contact
-# DELETE http://localhost:3000/contacts/delete/663f65337c1cf4572647c5cc
+DELETE http://localhost:3000/contacts/delete/663f65337c1cf4572647c5cc
