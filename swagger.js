@@ -7,7 +7,7 @@ const doc = {
     description: 'Contacts API Descriptions',
     version: '1.0.1',
   },
-  host: 'https://wsev.onrender.com//contacts/',
+  host: 'https://wsev.onrender.com//contacts',
   schemes: ['http'],
 };
 
