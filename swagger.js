@@ -7,8 +7,8 @@ const doc = {
     description: 'Contacts API Descriptions',
     version: '1.0.1',
   },
-  host: 'https://wsev.onrender.com/contacts',
-  schemes: ['http'],
+  host: 'wsev.onrender.com/contacts',
+  schemes: ['https'],
 };
 
 const endpointsFiles = ['./routes/contacts.js']; // Path to your routes files
